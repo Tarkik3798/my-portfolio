@@ -1,0 +1,95 @@
+/* globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Define CSS variables for dark and light themes */
+html.dark {
+  --bg-color: #111827; /* Dark background */
+  --text-color: #ffffff; /* Light text */
+}
+
+html.light {
+  --bg-color: #ffffff; /* Light background */
+  --text-color: #111827; /* Dark text */
+}
+
+/* Apply CSS variables */
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Additional elements can use the same variables */
+nav {
+  background-color: var(--bg-color);
+}
+
+nav a {
+  color: var(--text-color);
+}
+
+
+/* Light Mode */
+.light {
+  --background-gradient-from: #ff7e5f;
+  --background-gradient-to: #feb47b;
+  --text-color: #333;
+}
+
+/* Dark Mode */
+.dark {
+  --background-gradient-from: #1e3a8a;
+  --background-gradient-to: #2b6cb0;
+  --text-color: #f9fafb;
+}
+
+@keyframes gradient-x {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient-x {
+  background-size: 200% 200%;
+  animation: gradient-x 5s ease infinite;
+}
+
+.hero-section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(270deg, var(--background-gradient-from), var(--background-gradient-to));
+  background-size: 400% 400%;
+  animation: gradient-x 15s ease infinite;
+}
+
+.hero-button {
+  padding: 1rem 2rem;
+  background-color: #ff7e5f;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.hero-button:hover {
+  transform: scale(1.1);
+}
+
+/* body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} */
+
